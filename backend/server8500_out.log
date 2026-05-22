@@ -1,0 +1,5 @@
+INFO:     127.0.0.1:54174 - "GET / HTTP/1.1" 200 OK
+[SUMMARY ROUTE] payload original_text length: 177
+[SUMMARY ROUTE] summary_data keys: dict_keys(['short_summary', 'bullet_summary', 'highlights'])
+[SUMMARY ROUTE] inserted id: 6a10220264a801c8594fc91b
+INFO:     127.0.0.1:54175 - "POST /api/summarize HTTP/1.1" 200 OK

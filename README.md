@@ -69,16 +69,25 @@ npm run dev -- --host 0.0.0.0 --port 5173
 - Backend: Render
 - Database: MongoDB Atlas
 
-### Frontend deployment
+### Vercel deployment (frontend + backend)
+
+This repo is now configured for a single Vercel deployment with both:
+- `frontend/` served as a static React app
+- `api/` served as Python serverless backend functions
 
 1. Push the repository to GitHub.
 2. Create a Vercel project and connect this repo.
-3. In Vercel project settings, set environment variable `VITE_API_URL` to your backend URL.
+3. Add the required environment variables in Vercel:
+   - `MONGODB_URI`
+   - `GROQ_API_KEY` (optional)
+   - `GEMINI_API_KEY` (optional)
+   - `MODEL_NAME` (optional)
+   - `GROQ_MODEL` (optional)
 4. Deploy.
 
-The repo already includes a root `vercel.json` that builds the `frontend/` app as a static site.
+The frontend now uses `/api` by default so the app and backend can run on the same Vercel domain.
 
-> If the backend is not available, the frontend falls back to a local browser summarizer so the website still returns a summary.
+> The deployment will publish your app to a Vercel URL once the project is created.
 
 ### Backend deployment
 
